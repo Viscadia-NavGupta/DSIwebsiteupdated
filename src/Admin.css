@@ -1,0 +1,47 @@
+.adminPage {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  color: #AA0000;
+}
+
+.adminTitle {
+  flex-grow: 1;
+  text-align: center;
+  color: #AA0000; /* Ensure title is red */
+}
+
+.backButton {
+  background-color: #AA0000; /* Red color for the back button */
+  color: white;
+}
+
+.sectionsContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  margin-top: 20px;
+}
+
+.sectionItem {
+  display: flex;
+  justify-content: center;
+}
+
+.button {
+  width: 100%;
+  padding: 10px;
+}
+
+.buttonText {
+  margin-left: 10px;
+}

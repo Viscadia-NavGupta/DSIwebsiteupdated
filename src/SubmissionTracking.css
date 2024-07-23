@@ -1,0 +1,61 @@
+.submissionTrackingPage {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .header {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+  }
+  
+  .submissionTrackingTitle {
+    font-weight: bold;
+  }
+  
+  .backButton {
+    background-color: #AA0000;
+    color: white;
+  }
+  
+  .submissionTrackingTable {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  
+  .submissionTrackingTable th, .submissionTrackingTable td {
+    border: 1px solid #ccc;
+    padding: 10px;
+    text-align: left;
+  }
+  
+  .submissionTrackingTable th {
+    background-color: #AA0000;
+    color: white;
+  }
+  
+  .submissionTrackingTable a {
+    color: #AA0000;
+    text-decoration: none;
+  }
+  
+  .submissionTrackingTable a:hover {
+    text-decoration: underline;
+  }
+  
+  .locked {
+    color: teal;
+  }
+  
+  .inprogress {
+    color: orange;
+  }
+  
+  .notstarted {
+    color: red;
+  }
+  

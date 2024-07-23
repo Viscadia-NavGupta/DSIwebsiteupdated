@@ -1,0 +1,50 @@
+.reportingDashboardPage {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .header {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+  }
+  
+  .reportingDashboardTitle {
+    font-weight: bold;
+    color: #AA0000; /* Red color for the heading */
+  }
+  
+  .backButton {
+    background-color: #AA0000; /* Red color for the back button */
+    color: white;
+  }
+  
+  .reportingDashboardTable {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  
+  .reportingDashboardTable th, .reportingDashboardTable td {
+    border: 1px solid #ccc;
+    padding: 10px;
+    text-align: left;
+  }
+  
+  .reportingDashboardTable th {
+    background-color: #AA0000;
+    color: white;
+  }
+  
+  .reportingDashboardTable a {
+    color: #AA0000;
+    text-decoration: none;
+  }
+  
+  .reportingDashboardTable a:hover {
+    text-decoration: underline;
+  }
+  
