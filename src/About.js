@@ -7,10 +7,10 @@ function About({ setIsLoggedIn }) {
   const navigate = useNavigate();
 
   const buttonDetails = [
-    { name: "Access Management", description: "Manage user permissions and control access", path: "/access-management", icon: <img src="/images/acessmanagment.svg" alt="Model Builder" className="iconsize" /> },
-    { name: "Cycle Management", description: "Manage and track forecast cycles", path:"/submission-tracking", icon: <img src="/images/cyclemgt.svg" alt="Model Builder" className="iconsize" /> },
-    { name: "Submission Tracking", description: "Keep track of all your submissions in one place", path: "/cycle-tracking", icon: <img src="/images/submission.svg" alt="Model Builder" className="iconsize" /> },
-    { name: "Contact Support", description: "Get assistance with any issues or inquiries.", path: "/contact-us", icon: <img src="/images/support.svg" alt="Model Builder" className="iconsize" /> }
+    { name: "Access Management", description: "Manage user permissions and control access", path: "/access-management", icon: <img src={`${process.env.PUBLIC_URL}/images/acessmanagment.svg`} alt="Model Builder" className="iconsize" /> },
+    { name: "Cycle Management", description: "Manage and track forecast cycles", path: "/submission-tracking", icon: <img src={`${process.env.PUBLIC_URL}/images/cyclemgt.svg`} alt="Model Builder" className="iconsize" /> },
+    { name: "Submission Tracking", description: "Keep track of all your submissions in one place", path: "/cycle-tracking", icon: <img src={`${process.env.PUBLIC_URL}/images/submission.svg`} alt="Model Builder" className="iconsize" /> },
+    { name: "Contact Support", description: "Get assistance with any issues or inquiries.", path: "/contact-us", icon: <img src={`${process.env.PUBLIC_URL}/images/support.svg`} alt="Model Builder" className="iconsize" /> }
   ];
 
   const handleLogout = () => {
@@ -34,7 +34,7 @@ function About({ setIsLoggedIn }) {
         <div className="sectionsContainer">
           <div className="leftSection">
             <div className="userIconContainer">
-              <img src={`/images/carig.jpeg`} alt="User" className="userImage" />
+              <img src={`${process.env.PUBLIC_URL}/images/carig.jpeg`} alt="User" className="userImage" />
             </div>
             <div className="aboutLinks">
               <Typography variant="h5" className="userName">Craig Leonardi</Typography>
