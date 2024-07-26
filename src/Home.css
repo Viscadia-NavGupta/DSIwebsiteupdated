@@ -143,6 +143,7 @@ body, html {
   cursor: pointer;
   font-size: 0.9rem;
   text-decoration: none;
+  margin-left: 20px; /* Add margin to the left */
 }
 
 .forgotPasswordLink:hover {
@@ -153,19 +154,6 @@ body, html {
   color: red;
   margin-top: 10px;
 }
-
-/* .footer {
-  text-align: center;
-  padding: 20px;
-  background-color: #AA0000;
-  color: white;
-  flex-shrink: 0;
-  width: 100%;
-  box-sizing: border-box;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-} */
 
 .footerLogoContainer {
   display: flex;
