@@ -12,7 +12,7 @@
 }
 
 .contactUsTitle {
-  color: #AA0000; /* Red color for the title */
+  color: #00BFFF; /* Red color for the title */
   margin-bottom: 20px;
 }
 
@@ -29,7 +29,7 @@
 }
 
 .submitButton {
-  background-color: #00BFFF;
+  background-color: #005baa;
   color: white;
   align-self: center;
   margin-top: 20px;

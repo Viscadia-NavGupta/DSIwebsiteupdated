@@ -14,10 +14,9 @@ const Header = ({ setIsLoggedIn }) => {
     navigate('/');
   };
 
-  const handleHelpClick = () => {
-    // Add your help click handling logic here
-    alert('Help icon clicked!');
-  };
+    const handleHelpClick = (button) => {
+        navigate("/contact-us");
+    };
 
   const handleLogoClick = () => {
     navigate('/about');

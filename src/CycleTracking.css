@@ -90,14 +90,14 @@
   color: white;
 }
 
-.Locked {
+.locked {
   color: teal;
 }
 
-["In Progress"] {
+.inProgress {
   color: orange;
 }
 
-["Not Started"] {
+.notStarted {
   color: red;
 }
