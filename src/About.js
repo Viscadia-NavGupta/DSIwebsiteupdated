@@ -34,7 +34,7 @@ function About({ setIsLoggedIn }) {
         <div className="sectionsContainer">
           <div className="leftSection">
             <div className="userIconContainer">
-              <img src={`${process.env.PUBLIC_URL}/images/carig.jpeg`} alt="User" className="userImage" />
+              <img src={`${process.env.PUBLIC_URL}/images/carig.png`} alt="User" className="userImage" />
             </div>
             <div className="aboutLinks">
               <Typography variant="h5" className="userName">Craig Leonardi</Typography>
