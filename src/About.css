@@ -1,68 +1,70 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap');
+
+* {
+  font-family: 'Roboto', sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 .aboutPage {
   display: flex;
   flex-direction: column;
   height: 100%;
-  padding: 20px;
+  padding: 0 20px; /* Remove top padding */
   box-sizing: border-box;
 }
 
 .aboutContainer {
-  flex: 1 0 auto; /* Take up remaining height */
+  flex: 1 0 auto;
   display: flex;
   flex-direction: column;
   align-items: center;
-  overflow-y: auto; /* Enable vertical scrolling */
+  overflow-y: auto;
+  margin-top: 0; /* Remove margin to reduce top space */
 }
 
 .sectionsContainer {
   display: flex;
   justify-content: space-between;
-  width: 100%; /* Ensure full width */
-  margin-top: 20px; /* Adjusted margin to separate from the lines */
+  width: 100%;
+  margin-top: 0; /* Further reduce space above containers if needed */
   align-items: center;
-  flex-grow: 1; /* Allow sectionsContainer to grow */
+  flex-grow: 1;
 }
 
 .leftSection {
-  width: 30%; /* Adjusted width for left section */
-  position: relative; /* Add this to position the pseudo-element */
+  width: 30%;
+  position: relative;
 }
 
 .leftSection::after {
   content: "";
   display: block;
-  width: 2px; /* Width of the line */
-  background-color: #8B0000; /* Color of the line */
-  height: 100%; /* Full height of the left section */
+  width: 2px;
+  background-color: #8B0000;
+  height: 100%;
   position: absolute;
-  right: 0; /* Position the line on the right side */
+  right: 0;
   top: 0;
   margin-left: 12px;
 }
 
 .rightSection {
-  width: 70%; /* Adjusted width for right section */
+  width: 70%;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: flex-start;
 }
 
-.rightsection-item {
-  width: calc(33% - 20px) !important;
-  margin: 10px !important;
-  flex-basis: unset !important;
-  max-width: unset !important;
-  flex-grow: unset !important;
-}
-
 .userIconContainer {
-  text-align: center; /* Center align the user icon */
-  margin-bottom: 10px; /* Adjusted margin */
+  text-align: center;
+  margin-bottom: 10px;
 }
 
 .userIcon {
-  font-size: 120px; /* Adjusted icon size */
+  font-size: 120px;
 }
 
 .userImage {
@@ -70,10 +72,11 @@
   height: 120px;
   border-radius: 50%;
   object-fit: cover;
+  border: 5px solid #005baa; /* Blue border */
 }
 
 .aboutLinks {
-  text-align: left; /* Align headings and links to the left */
+  text-align: left;
   padding-left: 10px;
 }
 
@@ -92,13 +95,13 @@
 .aboutLinks li {
   margin-bottom: 10px;
   text-decoration: none;
-  color: #8B0000;
+  color: #005baa;
   font-size: 1rem;
   display: block;
   padding: 8px;
   border: 1px solid #fff0;
   border-radius: 4px;
-  background-color: #fff0; /* Red background color */
+  background-color: #fff0;
 }
 
 .aboutLinks a {
@@ -109,58 +112,70 @@
   padding: 8px;
   border: 1px solid #ccc;
   border-radius: 4px;
-  background-color: #8B0000; /* Red background color */
-}
-
-.buttonContainer {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  width: 100%; /* Full width */
-  margin-top: 6%; /* Margin to separate from welcome text */
-}
-
-.button {
-  position: relative; /* Ensure relative positioning for absolute icon */
-  width: 100%;
-  height: 100px; /* Set height to make buttons square */
-  padding: 15px; /* Increased button padding */
-  font-size: 1rem; /* Adjusted button font size */
   background-color: #8B0000;
-  color: #fff;
+}
+
+.buttonGrid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); /* Two columns */
+  gap: 10px; /* Gap between the buttons */
+  width: 100%;
+}
+
+.customButton {
+  display: flex;
+  align-items: center;
+  background-color: white; /* White background color */
+  color: #000;
   border: none;
-  border-radius: 0; /* Square shape */
+  border-radius: 4px;
+  padding: 10px;
   cursor: pointer;
   transition: background-color 0.3s ease, color 0.3s ease;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  overflow: hidden; /* Prevent text overflow */
+  width: 80%;
+  height: 80px; /* Reduced height */
+  box-sizing: border-box;
+  margin-left: 30px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Add shadow */
 }
 
-.button:hover {
-  background-color: #605d5d; /* Grey background on hover */
-  color: #d71b1b; /* White text color on hover */
+.customButton:hover {
+  background-color: #f0f0f0; /* Lighter background on hover */
+  color: #000; /* Black text color on hover */
+}
+
+.buttonText {
+  margin-left: 10px;
+  text-align: left;
+}
+
+.buttonTitle {
+  font-size: 0.875rem; /* Reduced font size */
+  font-weight: bold;
+  color: #005baa; /* Main text color set to blue */
+}
+
+.buttonDescription {
+  font-size: 0.75rem; /* Reduced font size */
+  color: #76aede; /* Description text color set to light blue */
 }
 
 .iconsize {
-  width: 40px;
-  height: 40px;
+  width: 30px; /* Reduced icon size */
+  height: 30px; /* Reduced icon size */
 }
 
 @media (max-width: 768px) {
   .sectionsContainer {
-    flex-direction: column; /* Stack sections on smaller screens */
-    align-items: center; /* Center align sections */
+    flex-direction: column;
+    align-items: center;
   }
 
   .leftSection, .rightSection {
-    width: 100%; /* Full width for both sections on smaller screens */
+    width: 100%;
   }
 
-  .buttonContainer {
-    grid-template-columns: repeat(2, 1fr); /* Two columns in grid on smaller screens */
+  .buttonGrid {
+    grid-template-columns: 1fr; /* Single column on smaller screens */
   }
 }

@@ -1,9 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import * as AWSConnections from './awsconnection';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faEye, faEyeSlash } from '@fortawesome/free-solid-svg-icons';
 import './Home.css';
+import Footer from './Footer';
 
 function Home({ setIsLoggedIn }) {
   const [email, setEmail] = useState('');
@@ -60,56 +59,48 @@ function Home({ setIsLoggedIn }) {
       <div className="homeContainer">
         <div className="topHeader">
           <div className="logoContainer">
-            <img src="/images/viscadialogo.png" alt="Viscadia" className="topBarLogo" />
-            <span className="topBarText">Viscadia Forecast Platform</span>
-          </div>
-          <div className="viscadiaLogoContainer">
-            <img src="/images/dsilogo.png" alt="Daiichi-Sankyo" className="viscadiaLogo" />
+            <img src="/images/viscadiaVwhite.png" alt="Viscadia" className="topBarLogo" />
+            <span className="topBarText">Forecast Platform</span>
           </div>
         </div>
         <div className="mainContent">
-          <h2 className="homeHeader">DSI Custom Forecast Platform</h2>
-          <div className="homeForm">
-            <input
-              type="email"
-              placeholder="Email"
-              className="homeInput"
-              value={email}
-              onChange={(e) => setEmail(e.target.value)}
-              onKeyPress={handleKeyPress}
-            />
-            <div className="passwordContainer">
+          <div className="leftContent">
+            <div className="logoContainer">
+              <img src="/images/dsilogo.png" alt="Logo" className="headerLogo" />
+            </div>
+            <div className="loginForm">
+              <input
+                type="email"
+                placeholder="Username"
+                className="loginInput"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+                onKeyPress={handleKeyPress}
+              />
               <input
                 type={showPassword ? "text" : "password"}
                 placeholder="Password"
-                className="homeInput"
+                className="loginInput"
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
                 onKeyPress={handleKeyPress}
               />
-              <button
-                type="button"
-                className="showPasswordButton"
-                onClick={() => setShowPassword(!showPassword)}
-              >
-                <FontAwesomeIcon icon={showPassword ? faEyeSlash : faEye} />
-              </button>
-            </div>
-            {errorMessage && <p className="errorMessage">{errorMessage}</p>}
-            <div className="buttonContainer">
-              <button className="homeButton" onClick={() => handleProceedClick(email, password)}>Login</button>
-              <Link to="/forgot-password" className="forgotPasswordLink">
-                Forgot Password?
-              </Link>
+              <div className="buttonContainer">
+                <button className="loginButton" onClick={() => handleProceedClick(email, password)}>Log In</button>
+              </div>
+              <div className="extraOptions">
+                <label>
+                  <input type="checkbox" />
+                  Remember me
+                </label>
+                <Link to="/forgot-password" className="forgotPasswordLink">
+                  Forgot Your Password?
+                </Link>
+              </div>
             </div>
           </div>
         </div>
-      </div>
-      <div className="footer">
-        <div className="footerLogoContainer">
-          <img src="/images/viscadialogowhite.png" alt="Viscadia" className="footerLogo" />
-        </div>
-        <p>Copyright 2024 © Viscadia. All rights reserved. <Link to="/terms">Terms and conditions</Link> • <Link to="/privacy">Privacy policy</Link></p>
+        <Footer color="red" /> {/* Use red color for the home page */}
       </div>
     </div>
   );

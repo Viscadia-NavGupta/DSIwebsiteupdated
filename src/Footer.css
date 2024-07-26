@@ -1,36 +1,46 @@
 .footer {
-    background-color: #A02020; /* Adjust color to match the image */
-    height: 20vh; /* 20% of the viewport height */
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    position: relative;
-    bottom: 0;
-    width: 100%;
-  }
-  
-  .footer-content {
-    text-align: center;
-    color: white;
-  }
-  
-  .footer-content .logo {
-    height: 40px; /* Adjust height as needed */
-    display: block;
-    margin: 0 auto 10px;
-  }
-  
-  .footer-content p {
-    margin: 0;
-  }
-  
-  .footer-content a {
-    color: white;
-    text-decoration: underline;
-    margin: 0 5px;
-  }
-  
-  .footer-content a:hover {
-    text-decoration: none;
-  }
-  
+  display: flex;
+  width: 100%;
+  box-sizing: border-box;
+  color: #000; /* Change text color to black to match the image */
+  padding: 0 20px; /* Add padding for inner spacing */
+  background: none; /* Remove background color */
+  align-items: center;
+  justify-content: space-between;
+}
+
+.footer-left {
+  width: 100%;
+  border-top: 1px solid #FF0000; /* Red top border */
+  padding: 10px 0; /* Add padding for spacing */
+  font-size: 0.9rem;
+  display: flex;
+  align-items: center;
+}
+
+.footer-right {
+  width: 15%;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end; /* Align logo to the right */
+}
+
+.footerLogo {
+  max-width: 150px;
+  margin-bottom: 10px;
+}
+
+.footer p {
+  margin: 0;
+  font-size: 0.9rem;
+}
+
+.footer a {
+  color: #000; /* Change link color to black */
+  text-decoration: underline;
+  margin: 0 5px;
+}
+
+.footer a:hover {
+  text-decoration: none;
+}

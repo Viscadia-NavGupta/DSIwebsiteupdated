@@ -2,57 +2,24 @@ html, body {
   margin: 0;
   padding: 0;
   height: 100%;
+  font-family: Arial, sans-serif;
+  overflow-x: hidden; /* Prevent horizontal overflow */
 }
 
 .app-container {
   display: flex;
   flex-direction: column;
-  height: 100vh;
+  min-height: 100vh;
 }
 
 .header {
-  flex: 0 0 2%;
+  flex: 0 0 auto; /* Ensure header takes only necessary space */
 }
 
 .content-container {
   flex: 1;
   overflow-y: auto;
-  background-image: url('../public/images/BGviscadia.jpg'); /* Add your background image here */
+  background-image: url("../public/images/BGviscadia.jpg"); /* Ensure the path is correct */
   background-size: cover;
   background-position: center;
-}
-
-.footer {
-  flex: 0 0 2%;
-  background-color: #A02020; /* Adjust color to match the image */
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 100%;
-  text-align: center;
-  color: white;
-}
-
-.footer-content {
-  text-align: center;
-}
-
-.footer-content .footerLogo {
-  height: 40px; /* Adjust height as needed */
-  display: block;
-  margin: 0 auto 10px;
-}
-
-.footer-content p {
-  margin: 0;
-}
-
-.footer-content a {
-  color: white;
-  text-decoration: underline;
-  margin: 0 5px;
-}
-
-.footer-content a:hover {
-  text-decoration: none;
 }

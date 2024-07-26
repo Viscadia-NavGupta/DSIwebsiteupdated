@@ -10,9 +10,9 @@ function Admin() {
   const navigate = useNavigate();
 
   const buttonDetails = [
-    { name: "Access Management", path: "/access-management", icon: <Settings /> },
+    { name: "Access Management", path: "/access-management", icon: <img src="/images/acessmanagment.svg" alt="Access Management" className="iconsize" /> },
     { name: "Forecast Cycle Management", path: "/submission-tracking", icon: <Settings /> },
-    { name: "Asset / Indication Management", path: "/asset-management", icon: <Settings /> }
+    { name: "Submission Tracking", path: "/cycle-tracking", icon: <Settings /> }
   ];
 
   const handleButtonClick = (button) => {

@@ -1,61 +1,107 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap');
+
+* {
+  font-family: 'Roboto', sans-serif;
+}
+
 .submissionTrackingPage {
-    padding: 20px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
-  
-  .header {
-    width: 100%;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 20px;
-  }
-  
-  .submissionTrackingTitle {
-    font-weight: bold;
-  }
-  
-  .backButton {
-    background-color: #AA0000;
-    color: white;
-  }
-  
-  .submissionTrackingTable {
-    width: 100%;
-    border-collapse: collapse;
-  }
-  
-  .submissionTrackingTable th, .submissionTrackingTable td {
-    border: 1px solid #ccc;
-    padding: 10px;
-    text-align: left;
-  }
-  
-  .submissionTrackingTable th {
-    background-color: #AA0000;
-    color: white;
-  }
-  
-  .submissionTrackingTable a {
-    color: #AA0000;
-    text-decoration: none;
-  }
-  
-  .submissionTrackingTable a:hover {
-    text-decoration: underline;
-  }
-  
-  .locked {
-    color: teal;
-  }
-  
-  .inprogress {
-    color: orange;
-  }
-  
-  .notstarted {
-    color: red;
-  }
-  
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.header {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.cycleManagementTitle {
+  font-weight: bold;
+  color : #005baa;
+}
+
+.headerButtons {
+  display: flex;
+  gap: 10px;
+}
+
+.createCycleContainer, .selectCycleContainer {
+  display: flex;
+}
+
+.createCycleButton, .selectCycleButton {
+  background-color: #00BFFF;
+  color: white;
+}
+
+.tableContainer {
+  width: 100%;
+  position: relative;
+}
+
+.cycleManagementTable {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.cycleManagementTable th, .cycleManagementTable td {
+  border: 1px solid #ccc;
+  padding: 10px;
+  text-align: left;
+}
+
+.cycleManagementTable th {
+  background-color: #00BFFF;
+  color: white;
+}
+
+.cycleManagementTable td input {
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.mainControls {
+  display: flex;
+  width: 100%;
+  margin-top: 20px;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.leftContainer {
+  display: flex;
+  justify-content: flex-start;
+  width: 50%;
+}
+
+.centerContainer {
+  display: flex;
+  width: 50%;
+}
+
+.addIcon {
+  font-size: 36px;
+  cursor: pointer;
+  color: #00BFFF;
+}
+
+.doneButton {
+  background-color: #00BFFF;
+  color: white;
+}
+
+.closedStatus {
+  color: red;
+}
+
+.initiatedStatus {
+  color: teal;
+}
+
+.inProgressStatus {
+  color: orange;
+}

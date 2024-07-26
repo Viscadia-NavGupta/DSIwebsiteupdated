@@ -1,4 +1,10 @@
-.accessManagementPage {
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap');
+
+* {
+  font-family: 'Roboto', sans-serif;
+}
+
+.cycleTrackingPage {
   padding: 20px;
   display: flex;
   flex-direction: column;
@@ -13,12 +19,17 @@
   margin-bottom: 20px;
 }
 
-.accessManagementTitle {
+.cycleTrackingTitle {
   font-weight: bold;
   color: #005baa;
 }
 
-.manageUsersButton {
+.headerButtons {
+  display: flex;
+  gap: 10px;
+}
+
+.selectCycleButton {
   background-color: #00BFFF;
   color: white;
 }
@@ -28,23 +39,23 @@
   position: relative;
 }
 
-.accessManagementTable {
+.cycleTrackingTable {
   width: 100%;
   border-collapse: collapse;
 }
 
-.accessManagementTable th, .accessManagementTable td {
+.cycleTrackingTable th, .cycleTrackingTable td {
   border: 1px solid #ccc;
   padding: 10px;
   text-align: left;
 }
 
-.accessManagementTable th {
+.cycleTrackingTable th {
   background-color: #00BFFF;
   color: white;
 }
 
-.accessManagementTable td input {
+.cycleTrackingTable td input {
   width: 100%;
   box-sizing: border-box;
 }
@@ -52,7 +63,7 @@
 .mainControls {
   display: flex;
   width: 100%;
-  margin-top: 10px;
+  margin-top: 20px;
   justify-content: space-between;
   align-items: center;
 }
@@ -77,4 +88,16 @@
 .doneButton {
   background-color: #00BFFF;
   color: white;
+}
+
+.Locked {
+  color: teal;
+}
+
+["In Progress"] {
+  color: orange;
+}
+
+["Not Started"] {
+  color: red;
 }

@@ -1,0 +1,36 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap');
+
+* {
+  font-family: 'Roboto', sans-serif;
+}
+
+.contactUsPage {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.contactUsTitle {
+  color: #AA0000; /* Red color for the title */
+  margin-bottom: 20px;
+}
+
+.contactUsForm {
+  width: 100%;
+  max-width: 600px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.inputField {
+  background-color: white;
+}
+
+.submitButton {
+  background-color: #00BFFF;
+  color: white;
+  align-self: center;
+  margin-top: 20px;
+}

@@ -19,9 +19,13 @@ const Header = ({ setIsLoggedIn }) => {
     alert('Help icon clicked!');
   };
 
+  const handleLogoClick = () => {
+    navigate('/about');
+  };
+
   return (
     <header className="header-content">
-      <div className="logo-container">
+      <div className="logo-container" onClick={handleLogoClick} style={{ cursor: 'pointer' }}>
         <img src="/images/viscadiaVwhite.png" alt="Viscadia" className="logo" />
         <span className="title">DSI Forecast Platform</span>
       </div>

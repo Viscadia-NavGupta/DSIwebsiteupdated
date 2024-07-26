@@ -3,16 +3,14 @@ import './Footer.css';
 
 const Footer = () => {
   return (
-    <footer className="footer">
-      <div className="footer-content">
-        <img src="/images/viscadialogowhite.png" alt="Logo" className="logo" />
-        <p>
-          Copyright 2024 © Viscadia. All rights reserved.
-          <a href="/terms-and-conditions"> Terms and conditions</a> • 
-          <a href="/privacy-policy"> Privacy policy</a>
-        </p>
+    <div className="footer">
+      <div className="footer-left">
+        <span>© 2024 Viscadia. All rights reserved. Confidential.</span>
       </div>
-    </footer>
+      <div className="footer-right">
+        <img src="/images/viscadialogo.png" alt="Viscadia" className="footerLogo" />
+      </div>
+    </div>
   );
 };
 
