@@ -7,9 +7,11 @@ function About({ setIsLoggedIn }) {
   const navigate = useNavigate();
 
   const buttonDetails = [
-    { name: "Access Management", description: "Manage user permissions and control access", path: "/access-management", icon: <img src={`${process.env.PUBLIC_URL}/images/acessmanagment.svg`} alt="Model Builder" className="iconsize" /> },
-    { name: "Cycle Management", description: "Manage and track forecast cycles", path: "/submission-tracking", icon: <img src={`${process.env.PUBLIC_URL}/images/cyclemgt.svg`} alt="Model Builder" className="iconsize" /> },
+    { name: "User Management", description: "Manage user permissions and control access", path: "/access-management", icon: <img src={`${process.env.PUBLIC_URL}/images/acessmanagment.svg`} alt="Model Builder" className="iconsize" /> },
+    { name: "Acess Management", description: "Manage and track forecast cycles", path: "/submission-tracking", icon: <img src={`${process.env.PUBLIC_URL}/images/cyclemgt.svg`} alt="Model Builder" className="iconsize" /> },
     { name: "Submission Tracking", description: "Keep track of all your submissions in one place", path: "/cycle-tracking", icon: <img src={`${process.env.PUBLIC_URL}/images/submission.svg`} alt="Model Builder" className="iconsize" /> },
+    { name: "Cycle Tracking", description: "Get assistance with any issues or inquiries.", path: "/contact-us", icon: <img src={`${process.env.PUBLIC_URL}/images/support.svg`} alt="Model Builder" className="iconsize" /> },
+    { name: "Asset Indication Management", description: "Keep track of all your submissions in one place", path: "/cycle-tracking", icon: <img src={`${process.env.PUBLIC_URL}/images/submission.svg`} alt="Model Builder" className="iconsize" /> },
     { name: "Contact Support", description: "Get assistance with any issues or inquiries.", path: "/contact-us", icon: <img src={`${process.env.PUBLIC_URL}/images/support.svg`} alt="Model Builder" className="iconsize" /> }
   ];
 

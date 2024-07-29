@@ -66,7 +66,7 @@ function Home({ setIsLoggedIn }) {
         <div className="mainContent">
           <div className="leftContent">
             <div className="logoContainer">
-              <img src="/images/dsilogo.png" alt="Logo" className="headerLogo" />
+              <img src="/images/dsilogoname.png" alt="Logo" className="headerLogo" />
             </div>
             <div className="loginForm">
               <input
