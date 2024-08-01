@@ -1,0 +1,86 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap');
+
+* {
+  font-family: 'Roboto', sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.productManagementPage {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+}
+
+.sectionsContainer {
+  display: flex;
+  width: 100%;
+}
+
+.leftSection {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-right: 20px;
+}
+
+.rightSection {
+  flex: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.chart {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.pieChart {
+  width: 150px;
+  height: 150px;
+  margin-bottom: 10px;
+}
+
+.buttonsContainer {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.tableContainer {
+  width: 100%;
+}
+
+.indicationTableContainer {
+  margin-top: 20px;
+}
+
+.businessUnit {
+  color: teal;
+}
+
+@media (max-width: 768px) {
+  .sectionsContainer {
+    flex-direction: column;
+  }
+
+  .leftSection {
+    padding-right: 0;
+    margin-bottom: 20px;
+  }
+
+  .buttonsContainer {
+    justify-content: center;
+    width: 100%;
+  }
+
+  .tableContainer {
+    width: 100%;
+  }
+}

@@ -2,20 +2,21 @@ import React, { useState } from 'react';
 import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
 import AddIcon from '@mui/icons-material/Add';
-import './CycleTracking.css';
+import './SubmissionTracking.css';
 
 const initialCycleData = [
-  { cycle: "AF2 2024", asset: "Zaherity", indication: "NSCLC", partnerFirm: "", status: "Locked", forecastOwner: "Kshitiz Shekhawat", lastUpdated: "<<Time Stamp>>" },
-  { cycle: "AF2 2024", asset: "Dato", indication: "TL-01", partnerFirm: "", status: "In Progress", forecastOwner: "Bill Bayona", lastUpdated: "<<Time Stamp>>" },
-  { cycle: "AF2 2024", asset: "Enhertu", indication: "mBC", partnerFirm: "", status: "Not Started", forecastOwner: "Rob Hernandez", lastUpdated: "<<Time Stamp>>" },
-  { cycle: "AF2 2024", asset: "Enhertu", indication: "mEC", partnerFirm: "", status: "Locked", forecastOwner: "Rob Hernandez", lastUpdated: "<<Time Stamp>>" }
+  { cycle: "AF1 2023", createdBy: "Craig Leonardi", startDate: "10 Oct Nov 2023", closeDate: "10 Oct Nov 2023", status: "CLOSED" },
+  { cycle: "AF2 2024", createdBy: "Craig Leonardi", startDate: "Xxx", closeDate: "Xxx", status: "TO BE INITIATED" },
+  { cycle: "LRP 2023", createdBy: "Craig Leonardi", startDate: "Xxx", closeDate: "Xxx", status: "CLOSED" },
+  { cycle: "AF2 2024", createdBy: "Craig Leonardi", startDate: "Xxx", closeDate: "Xxx", status: "CLOSED" },
+  { cycle: "Q4'24 Refresh", createdBy: "Craig Leonardi", startDate: "Xxx", closeDate: "Xxx", status: "In-Progress" }
 ];
 
 function CycleTracking() {
   const [cycleData, setCycleData] = useState(initialCycleData);
   const [isEditing, setIsEditing] = useState(false);
 
-  const handleSelectCycleClick = () => {
+  const handleCreateCycleClick = () => {
     setIsEditing(true);
   };
 
@@ -33,43 +34,65 @@ function CycleTracking() {
   const handleAddRow = () => {
     setCycleData([
       ...cycleData,
-      { cycle: "", asset: "", indication: "", partnerFirm: "", status: "", forecastOwner: "", lastUpdated: "" }
+      { cycle: "", createdBy: "", startDate: "", closeDate: "", status: "" }
     ]);
   };
 
+  const getStatusClass = (status) => {
+    switch (status.toLowerCase()) {
+      case 'closed':
+        return 'closedStatus';
+      case 'in-progress':
+        return 'inProgressStatus';
+      case 'to be initiated':
+        return 'initiatedStatus';
+      default:
+        return '';
+    }
+  };
+
   return (
-    <div className="cycleTrackingPage">
+    <div className="submissionTrackingPage">
       <div className="header">
-        <Typography variant="h5" align="left" className="cycleTrackingTitle">Submission Tracking</Typography>
+        <Typography variant="h5" align="left" className="cycleManagementTitle">Cycle Management</Typography>
         <div className="headerButtons">
-          <Button
-            variant="contained"
-            color="primary"
-            className="selectCycleButton"
-            onClick={handleSelectCycleClick}
-          >
-            Select Cycle
-          </Button>
+          <div className="createCycleContainer">
+            <Button
+              variant="contained"
+              color="primary"
+              className="createCycleButton"
+              onClick={handleCreateCycleClick}
+            >
+              Create New Cycle
+            </Button>
+          </div>
+          <div className="selectCycleContainer">
+            <Button
+              variant="contained"
+              color="primary"
+              className="selectCycleButton"
+            >
+              Select Cycle
+            </Button>
+          </div>
         </div>
       </div>
       <div className="tableContainer">
-        <table className="cycleTrackingTable">
+        <table className="cycleManagementTable">
           <thead>
             <tr>
               <th>Cycle</th>
-              <th>Asset</th>
-              <th>Indication</th>
-              <th>Partner Firm</th>
+              <th>Created By</th>
+              <th>Cycle Start Date</th>
+              <th>Cycle Close Date</th>
               <th>Status</th>
-              <th>Forecast Owner</th>
-              <th>Last Updated</th>
             </tr>
           </thead>
           <tbody>
             {cycleData.map((cycle, index) => (
               <tr key={index}>
                 {Object.keys(cycle).map((field) => (
-                  <td key={field}>
+                  <td key={field} className={field === 'status' ? getStatusClass(cycle[field]) : ''}>
                     {isEditing ? (
                       <input
                         type="text"

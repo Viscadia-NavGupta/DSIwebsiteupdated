@@ -4,7 +4,7 @@
   font-family: 'Roboto', sans-serif;
 }
 
-.submissionTrackingPage {
+.cycleTrackingPage {
   padding: 20px;
   display: flex;
   flex-direction: column;
@@ -19,9 +19,9 @@
   margin-bottom: 20px;
 }
 
-.cycleManagementTitle {
+.cycleTrackingTitle {
   font-weight: bold;
-  color : #005baa;
+  color: #005baa;
 }
 
 .headerButtons {
@@ -29,11 +29,7 @@
   gap: 10px;
 }
 
-.createCycleContainer, .selectCycleContainer {
-  display: flex;
-}
-
-.createCycleButton, .selectCycleButton {
+.selectCycleButton {
   background-color: #00BFFF;
   color: white;
 }
@@ -43,23 +39,23 @@
   position: relative;
 }
 
-.cycleManagementTable {
+.cycleTrackingTable {
   width: 100%;
   border-collapse: collapse;
 }
 
-.cycleManagementTable th, .cycleManagementTable td {
+.cycleTrackingTable th, .cycleTrackingTable td {
   border: 1px solid #ccc;
   padding: 10px;
   text-align: left;
 }
 
-.cycleManagementTable th {
+.cycleTrackingTable th {
   background-color: #00BFFF;
   color: white;
 }
 
-.cycleManagementTable td input {
+.cycleTrackingTable td input {
   width: 100%;
   box-sizing: border-box;
 }
@@ -94,14 +90,14 @@
   color: white;
 }
 
-.closedStatus {
-  color: red;
-}
-
-.initiatedStatus {
+.locked {
   color: teal;
 }
 
-.inProgressStatus {
+.inProgress {
   color: orange;
+}
+
+.notStarted {
+  color: red;
 }

@@ -48,7 +48,7 @@ function AccessManagement() {
           className="manageUsersButton"
           onClick={handleManageUsersClick}
         >
-          Manage Users
+          Manage Access
         </Button>
       </div>
       <div className="tableContainer">

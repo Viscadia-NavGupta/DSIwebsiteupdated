@@ -11,7 +11,9 @@ import SubmissionTracking from './SubmissionTracking';
 import AccessManagement from './AccessManagement';
 import CycleTracking from './CycleTracking';
 import ContactUs from './Contact';
+import UserManagement from './UserManagement'; // Import the new UserManagement component
 import './App.css';
+import ProductManagement from './ProductManagement';
 
 const App = () => {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
@@ -30,8 +32,10 @@ const App = () => {
             <Route path="/reporting-dashboard" element={<ReportingDashboard />} />
             <Route path="/submission-tracking" element={<SubmissionTracking />} />
             <Route path="/access-management" element={<AccessManagement />} />
-            <Route path="/cycle-Tracking" element={<CycleTracking />} />
-            <Route path="/Contact-Us" element={<ContactUs />} />
+            <Route path="/cycle-tracking" element={<CycleTracking />} />
+            <Route path="/contact-us" element={<ContactUs />} />
+            <Route path="/prodcut-managment" element={<ProductManagement />} />
+            <Route path="/user-management" element={<UserManagement />} /> {/* Add the new route here */}
             {/* Add other routes here */}
             <Route path="*" element={<NotFound />} />
           </Routes>

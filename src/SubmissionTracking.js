@@ -2,21 +2,20 @@ import React, { useState } from 'react';
 import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
 import AddIcon from '@mui/icons-material/Add';
-import './SubmissionTracking.css';
+import './CycleTracking.css';
 
 const initialCycleData = [
-  { cycle: "AF1 2023", createdBy: "Craig Leonardi", startDate: "10 Oct Nov 2023", closeDate: "10 Oct Nov 2023", status: "CLOSED" },
-  { cycle: "AF2 2024", createdBy: "Craig Leonardi", startDate: "Xxx", closeDate: "Xxx", status: "TO BE INITIATED" },
-  { cycle: "LRP 2023", createdBy: "Craig Leonardi", startDate: "Xxx", closeDate: "Xxx", status: "CLOSED" },
-  { cycle: "AF2 2024", createdBy: "Craig Leonardi", startDate: "Xxx", closeDate: "Xxx", status: "CLOSED" },
-  { cycle: "Q4'24 Refresh", createdBy: "Craig Leonardi", startDate: "Xxx", closeDate: "Xxx", status: "In-Progress" }
+  { cycle: "AF2 2024", asset: "Zaherity", indication: "NSCLC", partnerFirm: "Merck", status: "Locked", forecastOwner: "Kshitiz Shekhawat", lastUpdated: "<<Time Stamp>>" },
+  { cycle: "AF2 2024", asset: "Dato", indication: "TL-01", partnerFirm: "Merck", status: "In Progress", forecastOwner: "Bill Bayona", lastUpdated: "<<Time Stamp>>" },
+  { cycle: "AF2 2024", asset: "Enhertu", indication: "mBC", partnerFirm: "Astrazeneca", status: "Not Started", forecastOwner: "Rob Hernandez", lastUpdated: "<<Time Stamp>>" },
+  { cycle: "AF2 2024", asset: "Enhertu", indication: "mEC", partnerFirm: "Astrazeneca", status: "Locked", forecastOwner: "Rob Hernandez", lastUpdated: "<<Time Stamp>>" }
 ];
 
 function SubmissionTracking() {
   const [cycleData, setCycleData] = useState(initialCycleData);
   const [isEditing, setIsEditing] = useState(false);
 
-  const handleCreateCycleClick = () => {
+  const handleSelectCycleClick = () => {
     setIsEditing(true);
   };
 
@@ -34,45 +33,36 @@ function SubmissionTracking() {
   const handleAddRow = () => {
     setCycleData([
       ...cycleData,
-      { cycle: "", createdBy: "", startDate: "", closeDate: "", status: "" }
+      { cycle: "", asset: "", indication: "", partnerFirm: "", status: "", forecastOwner: "", lastUpdated: "" }
     ]);
   };
 
   return (
-    <div className="submissionTrackingPage">
+    <div className="cycleTrackingPage">
       <div className="header">
-        <Typography variant="h5" align="left" className="cycleManagementTitle">Cycle Management</Typography>
+        <Typography variant="h5" align="left" className="cycleTrackingTitle">Submission Tracking</Typography>
         <div className="headerButtons">
-          <div className="createCycleContainer">
-            <Button
-              variant="contained"
-              color="primary"
-              className="createCycleButton"
-              onClick={handleCreateCycleClick}
-            >
-              Create New Cycle
-            </Button>
-          </div>
-          <div className="selectCycleContainer">
-            <Button
-              variant="contained"
-              color="primary"
-              className="selectCycleButton"
-            >
-              Select Cycle
-            </Button>
-          </div>
+          <Button
+            variant="contained"
+            color="primary"
+            className="selectCycleButton"
+            onClick={handleSelectCycleClick}
+          >
+            Select Cycle
+          </Button>
         </div>
       </div>
       <div className="tableContainer">
-        <table className="cycleManagementTable">
+        <table className="cycleTrackingTable">
           <thead>
             <tr>
               <th>Cycle</th>
-              <th>Created By</th>
-              <th>Cycle Start Date</th>
-              <th>Cycle Close Date</th>
+              <th>Asset</th>
+              <th>Indication</th>
+              <th>Partner Firm</th>
               <th>Status</th>
+              <th>Forecast Owner</th>
+              <th>Last Updated</th>
             </tr>
           </thead>
           <tbody>
