@@ -44,7 +44,7 @@ function About({ setIsLoggedIn }) {
               </div>
               <div className="userDetailsContainer">
                 <Typography variant="body1" className="userTitle">Senior Director</Typography>
-                <Typography variant="body1" className="userInfo">US Forecasting & Business Analytics</Typography>
+                <Typography variant="body1" className="userInfo">Lead- US Forecasting & Business Analytics</Typography>
                 <Typography variant="body1" className="userLocation">Basking Ridge, New Jersey, United States</Typography>
               </div>
             </div>
