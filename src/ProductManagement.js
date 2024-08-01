@@ -5,37 +5,37 @@ import { Button, Typography, Table, TableBody, TableCell, TableContainer, TableH
 import { Add as AddIcon, Delete as DeleteIcon } from '@mui/icons-material';
 import './chartjsSetup'; // Import the chartjs setup
 
-function ProductManagement() {
-  const [products, setProducts] = useState([
-    { name: "Product A", category: "Category 1" },
-    { name: "Product B", category: "Category 2" }
+function AssetManagement() {
+  const [assets, setAssets] = useState([
+    { name: "Asset A", category: "Category 1" },
+    { name: "Asset B", category: "Category 2" }
   ]);
 
   const [indications, setIndications] = useState([
-    { product: "Product A", indication: "Indication 1", subIndication: "Sub-Indication 1" },
-    { product: "Product A", indication: "Indication 2", subIndication: "Sub-Indication 2" }
+    { asset: "Asset A", indication: "Indication 1", subIndication: "Sub-Indication 1" },
+    { asset: "Asset A", indication: "Indication 2", subIndication: "Sub-Indication 2" }
   ]);
 
-  const [selectedProduct, setSelectedProduct] = useState(null);
+  const [selectedAsset, setSelectedAsset] = useState(null);
   const [selectedIndication, setSelectedIndication] = useState(null);
-  const [openProductDialog, setOpenProductDialog] = useState(false);
+  const [openAssetDialog, setOpenAssetDialog] = useState(false);
   const [openIndicationDialog, setOpenIndicationDialog] = useState(false);
-  const [newProduct, setNewProduct] = useState({ name: "", category: "" });
-  const [newIndication, setNewIndication] = useState({ product: "", indication: "", subIndication: "" });
+  const [newAsset, setNewAsset] = useState({ name: "", category: "" });
+  const [newIndication, setNewIndication] = useState({ asset: "", indication: "", subIndication: "" });
 
-  const handleSelectProduct = (product) => {
-    setSelectedProduct(product);
+  const handleSelectAsset = (asset) => {
+    setSelectedAsset(asset);
   };
 
   const handleSelectIndication = (indication) => {
     setSelectedIndication(indication);
   };
 
-  const handleDeleteProduct = () => {
-    if (selectedProduct) {
-      setProducts(products.filter(product => product !== selectedProduct));
-      setIndications(indications.filter(indication => indication.product !== selectedProduct.name));
-      setSelectedProduct(null);
+  const handleDeleteAsset = () => {
+    if (selectedAsset) {
+      setAssets(assets.filter(asset => asset !== selectedAsset));
+      setIndications(indications.filter(indication => indication.asset !== selectedAsset.name));
+      setSelectedAsset(null);
     }
   };
 
@@ -46,27 +46,27 @@ function ProductManagement() {
     }
   };
 
-  const handleOpenProductDialog = () => {
-    setOpenProductDialog(true);
+  const handleOpenAssetDialog = () => {
+    setOpenAssetDialog(true);
   };
 
   const handleOpenIndicationDialog = () => {
     setOpenIndicationDialog(true);
   };
 
-  const handleCloseProductDialog = () => {
-    setOpenProductDialog(false);
-    setNewProduct({ name: "", category: "" });
+  const handleCloseAssetDialog = () => {
+    setOpenAssetDialog(false);
+    setNewAsset({ name: "", category: "" });
   };
 
   const handleCloseIndicationDialog = () => {
     setOpenIndicationDialog(false);
-    setNewIndication({ product: "", indication: "", subIndication: "" });
+    setNewIndication({ asset: "", indication: "", subIndication: "" });
   };
 
-  const handleAddProduct = () => {
-    setProducts([...products, newProduct]);
-    handleCloseProductDialog();
+  const handleAddAsset = () => {
+    setAssets([...assets, newAsset]);
+    handleCloseAssetDialog();
   };
 
   const handleAddIndication = () => {
@@ -75,11 +75,11 @@ function ProductManagement() {
   };
 
   const pieData = {
-    labels: products.map(product => product.name),
+    labels: assets.map(asset => asset.name),
     datasets: [
       {
         label: 'Indications',
-        data: products.map(product => indications.filter(indication => indication.product === product.name).length),
+        data: assets.map(asset => indications.filter(indication => indication.asset === asset.name).length),
         backgroundColor: ['#FF6384', '#36A2EB', '#FFCE56'],
         hoverBackgroundColor: ['#FF6384', '#36A2EB', '#FFCE56']
       }
@@ -101,34 +101,34 @@ function ProductManagement() {
   };
 
   return (
-    <div className="productManagementPage">
+    <div className="assetManagementPage">
       <div className="sectionsContainer">
         <div className="leftSection">
-          <Typography variant="h6">Product Management</Typography>
+          <Typography variant="h6">Asset Management</Typography>
           <div className="chart">
             <Pie data={pieData} options={pieOptions} />
-            <Typography variant="body1">Total Products: {products.length}</Typography>
+            <Typography variant="body1">Total Assets: {assets.length}</Typography>
           </div>
         </div>
         <div className="rightSection">
           <div className="buttonsContainer">
-            <Button variant="contained" color="primary" onClick={handleOpenProductDialog} startIcon={<AddIcon />}>Add New Product</Button>
-            <Button variant="contained" color="secondary" onClick={handleDeleteProduct} startIcon={<DeleteIcon />}>Delete Product</Button>
+            <Button variant="contained" color="primary" onClick={handleOpenAssetDialog} startIcon={<AddIcon />}>Add New Asset</Button>
+            <Button variant="contained" color="secondary" onClick={handleDeleteAsset} startIcon={<DeleteIcon />}>Delete Asset</Button>
           </div>
           <div className="tableContainer">
             <TableContainer component={Paper}>
               <Table>
                 <TableHead>
                   <TableRow>
-                    <TableCell>Product</TableCell>
+                    <TableCell>Asset</TableCell>
                     <TableCell>Category</TableCell>
                   </TableRow>
                 </TableHead>
                 <TableBody>
-                  {products.map((product, index) => (
-                    <TableRow key={index} selected={selectedProduct === product} onClick={() => handleSelectProduct(product)}>
-                      <TableCell>{product.name}</TableCell>
-                      <TableCell>{product.category}</TableCell>
+                  {assets.map((asset, index) => (
+                    <TableRow key={index} selected={selectedAsset === asset} onClick={() => handleSelectAsset(asset)}>
+                      <TableCell>{asset.name}</TableCell>
+                      <TableCell>{asset.category}</TableCell>
                     </TableRow>
                   ))}
                 </TableBody>
@@ -144,7 +144,7 @@ function ProductManagement() {
               <Table>
                 <TableHead>
                   <TableRow>
-                    <TableCell>Product</TableCell>
+                    <TableCell>Asset</TableCell>
                     <TableCell>Indication</TableCell>
                     <TableCell>Sub-Indication</TableCell>
                   </TableRow>
@@ -152,7 +152,7 @@ function ProductManagement() {
                 <TableBody>
                   {indications.map((indication, index) => (
                     <TableRow key={index} selected={selectedIndication === indication} onClick={() => handleSelectIndication(indication)}>
-                      <TableCell>{indication.product}</TableCell>
+                      <TableCell>{indication.asset}</TableCell>
                       <TableCell>{indication.indication}</TableCell>
                       <TableCell>{indication.subIndication}</TableCell>
                     </TableRow>
@@ -164,28 +164,28 @@ function ProductManagement() {
         </div>
       </div>
 
-      <Dialog open={openProductDialog} onClose={handleCloseProductDialog}>
-        <DialogTitle>Add New Product</DialogTitle>
+      <Dialog open={openAssetDialog} onClose={handleCloseAssetDialog}>
+        <DialogTitle>Add New Asset</DialogTitle>
         <DialogContent>
           <TextField
             autoFocus
             margin="dense"
-            label="Product Name"
+            label="Asset Name"
             fullWidth
-            value={newProduct.name}
-            onChange={(e) => setNewProduct({ ...newProduct, name: e.target.value })}
+            value={newAsset.name}
+            onChange={(e) => setNewAsset({ ...newAsset, name: e.target.value })}
           />
           <TextField
             margin="dense"
             label="Category"
             fullWidth
-            value={newProduct.category}
-            onChange={(e) => setNewProduct({ ...newProduct, category: e.target.value })}
+            value={newAsset.category}
+            onChange={(e) => setNewAsset({ ...newAsset, category: e.target.value })}
           />
         </DialogContent>
         <DialogActions>
-          <Button onClick={handleCloseProductDialog} color="primary">Cancel</Button>
-          <Button onClick={handleAddProduct} color="primary">Add</Button>
+          <Button onClick={handleCloseAssetDialog} color="primary">Cancel</Button>
+          <Button onClick={handleAddAsset} color="primary">Add</Button>
         </DialogActions>
       </Dialog>
 
@@ -194,13 +194,13 @@ function ProductManagement() {
         <DialogContent>
           <Select
             fullWidth
-            value={newIndication.product}
-            onChange={(e) => setNewIndication({ ...newIndication, product: e.target.value })}
+            value={newIndication.asset}
+            onChange={(e) => setNewIndication({ ...newIndication, asset: e.target.value })}
             displayEmpty
           >
-            <MenuItem value="" disabled>Select Product</MenuItem>
-            {products.map((product, index) => (
-              <MenuItem key={index} value={product.name}>{product.name}</MenuItem>
+            <MenuItem value="" disabled>Select Asset</MenuItem>
+            {assets.map((asset, index) => (
+              <MenuItem key={index} value={asset.name}>{asset.name}</MenuItem>
             ))}
           </Select>
           <TextField
@@ -227,4 +227,4 @@ function ProductManagement() {
   );
 }
 
-export default ProductManagement;
+export default AssetManagement;

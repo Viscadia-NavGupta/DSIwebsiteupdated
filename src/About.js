@@ -7,12 +7,12 @@ function About({ setIsLoggedIn }) {
   const navigate = useNavigate();
 
   const buttonDetails = [
-    { name: "User Management", description: "Manage user permissions and control access", path: "/user-management", icon: <img src={`${process.env.PUBLIC_URL}/images/acessmanagment.svg`} alt="Model Builder" className="iconsize" /> },
-    { name: "Acess Management", description: "Manage and track forecast cycles", path: "/access-management", icon: <img src={`${process.env.PUBLIC_URL}/images/cyclemgt.svg`} alt="Model Builder" className="iconsize" /> },
-    { name: "Cycle Tracking", description: "Get assistance with any issues or inquiries.", path: "/cycle-tracking", icon: <img src={`${process.env.PUBLIC_URL}/images/support.svg`} alt="Model Builder" className="iconsize" /> },
-    { name: "Submission Tracking", description: "Keep track of all your submissions in one place", path: "/submission-tracking", icon: <img src={`${process.env.PUBLIC_URL}/images/submission.svg`} alt="Model Builder" className="iconsize" /> },
-    { name: "Asset Indication Management", description: "Keep track of all your submissions in one place", path: "/prodcut-managment", icon: <img src={`${process.env.PUBLIC_URL}/images/submission.svg`} alt="Model Builder" className="iconsize" /> },
-    { name: "Contact Support", description: "Get assistance with any issues or inquiries.", path: "/contact-us", icon: <img src={`${process.env.PUBLIC_URL}/images/support.svg`} alt="Model Builder" className="iconsize" /> }
+    { name: "User Management", description: "Add / Delete Users", path: "/user-management", icon: <img src={`${process.env.PUBLIC_URL}/images/acessmanagment.svg`} alt="Model Builder" className="iconsize" /> },
+    { name: "Acess Management", description: "Define and  Control User Access", path: "/access-management", icon: <img src={`${process.env.PUBLIC_URL}/images/cyclemgt.svg`} alt="Model Builder" className="iconsize" /> },
+    { name: "Cycle Management", description: "Govern Forecast Cycles", path: "/cycle-tracking", icon: <img src={`${process.env.PUBLIC_URL}/images/support.svg`} alt="Model Builder" className="iconsize" /> },
+    { name: "Submission Tracking", description: "Track Forecast Submissions", path: "/submission-tracking", icon: <img src={`${process.env.PUBLIC_URL}/images/submission.svg`} alt="Model Builder" className="iconsize" /> },
+    { name: "Asset Indication Management", description: "Manage Asset Universe", path: "/prodcut-managment", icon: <img src={`${process.env.PUBLIC_URL}/images/submission.svg`} alt="Model Builder" className="iconsize" /> },
+    { name: "Contact Support", description: "Get Assistance", path: "/contact-us", icon: <img src={`${process.env.PUBLIC_URL}/images/support.svg`} alt="Model Builder" className="iconsize" /> }
   ];
 
   const handleLogout = () => {
